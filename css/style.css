@@ -5,20 +5,21 @@
 }
 
 .game-board{
-    width: 80%;
+    width: 100%;
     height: 500px;
-    border: 1px solid #333;
+    border-bottom: 10px solid green;
     margin: 0 auto;
     position: relative;
     overflow: hidden; /*esconde o pipe*/
+    background: linear-gradient(rgb(91, 185, 248), white);
 }
 .pipe{
     position: absolute;
     bottom: 0;
-    width: 90px;
-    height: 90px;
-   animation: pipe-animation 2s infinite linear;
- }
+    width: 80px;
+    height: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
 
 .mario{
     width: 150px;
@@ -27,7 +28,12 @@
   
 }
 .jump{
-    animation: jump 500ms  ease-out ;
+    animation: jump 600ms  ease-out ;
+}
+.clouds{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
 }
  @keyframes pipe-animation {
     from{
@@ -43,15 +49,24 @@
         bottom: 0;
     }
     40%{
-        bottom:100px;
+        bottom:200px;
     }
     50%{
-        bottom: 100px;
+        bottom: 200px;
     }
-    60%{
-        bottom: 100px;
+    70%{
+        bottom: 200px;
     }
     100%{
         bottom: 0;
+    }
+ }
+
+ @keyframes clouds-animation {
+    from{
+        right: -550px;
+    }
+    to{
+        right: 100%;
     }
  }
